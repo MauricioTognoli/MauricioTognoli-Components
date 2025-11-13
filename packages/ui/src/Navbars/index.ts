@@ -1,0 +1,1 @@
+export { default as NavbarWithSearchBar } from './navbar-with-search-bar';
