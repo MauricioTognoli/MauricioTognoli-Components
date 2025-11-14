@@ -26,7 +26,7 @@ export default function NavbarsPage() {
         </header>
 
         {/* Component Showcase Section */}
-        <section className="space-y-10 pb-20">
+        <section id="navbar-with-search-bar" className="space-y-10 pb-20">
           <div className="w-full">
             <ComponentShowcase
               title={t.showcase1}
