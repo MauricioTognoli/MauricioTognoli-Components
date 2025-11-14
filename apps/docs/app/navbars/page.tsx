@@ -3,13 +3,14 @@
 import { useState } from "react";
 import { useThemeLang } from "@/context/ThemeLangContext";
 import { ComponentShowcase } from "@/components/component-showcase";
-import {NavbarWithSearchBar} from "@repo/ui"
 import { navbarsData } from "@/data/navbarsData";
+import NavbarDesktop from "@/components/headers/NavbarWhitSearchBar/NavbarDesktop";
+import NavbarMobile from "@/components/headers/NavbarWhitSearchBar/NavbarMobile";
 
 export default function NavbarsPage() {
   const { language } = useThemeLang();
   const t = navbarsData[language];
-  
+
   return (
     <div className="min-h-screen bg-background text-foreground flex flex-col">
       <div className="container mx-auto px-4 py-10 flex-1 flex flex-col gap-10">
@@ -27,9 +28,12 @@ export default function NavbarsPage() {
         {/* Component Showcase Section */}
         <section className="space-y-10 pb-20">
           <div className="w-full">
-            <ComponentShowcase  title={t.showcase1} githubUrl="https://github.com/mauriciotognoli/components/tree/main/navbar-with-searchbar">
-              <NavbarWithSearchBar/>
-            </ComponentShowcase>
+            <ComponentShowcase
+              title={t.showcase1}
+              githubUrl="https://github.com/mauriciotognoli/components/tree/main/navbar-with-searchbar"
+            
+              DesktopComponent={<NavbarDesktop />}
+              MobileComponent={<NavbarMobile />}/>
           </div>
         </section>
       </div>

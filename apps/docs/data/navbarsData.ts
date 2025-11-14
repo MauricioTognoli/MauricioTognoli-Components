@@ -6,7 +6,7 @@ export const navbarsData = {
     navbar1: "Simple Navbar",
     navbar2: "Centered Navbar",
     navbar3: "Navbar with Search",
-    showcase1: "Navbar 1",
+    showcase1: "Navbar with Search",
     showcase2: "Navbar 2",
     categories: {
       basic: "Basic",
@@ -21,7 +21,7 @@ export const navbarsData = {
     navbar1: "Barra de navegación simple",
     navbar2: "Barra de navegación centrada",
     navbar3: "Barra con buscador",
-    showcase1: "Navbar 1",
+    showcase1: "Navbar con buscador",
     showcase2: "Navbar 2",
     categories: {
       basic: "Básico",

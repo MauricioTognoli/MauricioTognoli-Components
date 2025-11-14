@@ -1,1 +1,1 @@
-export * from './Navbars';
+export * from './Navbars/NavbarWithSearchBar';
