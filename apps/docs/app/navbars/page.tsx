@@ -30,7 +30,7 @@ export default function NavbarsPage() {
           <div className="w-full">
             <ComponentShowcase
               title={t.showcase1}
-              githubUrl="https://github.com/mauriciotognoli/components/tree/main/navbar-with-searchbar"
+              githubUrl="https://github.com/MauricioTognoli/MauricioTognoli-Components/tree/main/packages/ui/src/Navbars/NavbarWithSearchBar"
             
               DesktopComponent={<NavbarDesktop />}
               MobileComponent={<NavbarMobile />}/>
