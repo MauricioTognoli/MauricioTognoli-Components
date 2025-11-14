@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect } from "react";
 import { useThemeLang } from "@/context/ThemeLangContext";
 import { ComponentShowcase } from "@/components/component-showcase";
 import { navbarsData } from "@/data/navbarsData";
@@ -10,6 +10,16 @@ import NavbarMobile from "@/components/headers/NavbarWhitSearchBar/NavbarMobile"
 export default function NavbarsPage() {
   const { language } = useThemeLang();
   const t = navbarsData[language];
+
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash) {
+      const element = document.querySelector(hash);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, []);
 
   return (
     <div className="min-h-screen bg-background text-foreground flex flex-col">
@@ -31,9 +41,9 @@ export default function NavbarsPage() {
             <ComponentShowcase
               title={t.showcase1}
               githubUrl="https://github.com/MauricioTognoli/MauricioTognoli-Components/tree/main/packages/ui/src/Navbars/NavbarWithSearchBar"
-            
               DesktopComponent={<NavbarDesktop />}
-              MobileComponent={<NavbarMobile />}/>
+              MobileComponent={<NavbarMobile />}
+            />
           </div>
         </section>
       </div>
