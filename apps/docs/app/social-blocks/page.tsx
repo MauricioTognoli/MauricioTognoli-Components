@@ -1,0 +1,52 @@
+"use client";
+
+import { useEffect } from "react";
+import { useThemeLang } from "@/context/ThemeLangContext";
+import { ComponentShowcase } from "@/components/component-showcase";
+import { socialBlocksData } from "@/data/socialBlocksData";
+import BentoSocialCardDesktop from "@/components/social-blocks/BentoSocialCard/BentoSocialCardDesktop";
+import BentoSocialCardMobile from "@/components/social-blocks/BentoSocialCard/BentoSocialCardMobile";
+
+export default function SocialBlocksPage() {
+  const { language } = useThemeLang();
+  const t = socialBlocksData[language] || socialBlocksData.en;
+
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash) {
+      const element = document.querySelector(hash);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, []);
+
+  return (
+    <div className="min-h-screen bg-background text-foreground flex flex-col">
+      <div className="container mx-auto px-4 py-10 flex-1 flex flex-col gap-10">
+        {/* Header */}
+        <header className="h-screen min-h-screen text-center flex flex-col justify-center items-center flex-1 space-y-6">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold">
+            {t.title}
+          </h1>
+          <div className="h-1 sm:h-2 w-32 sm:w-40 md:w-48 mx-auto bg-primary rounded-full" />
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground max-w-lg sm:max-w-xl md:max-w-2xl mx-auto">
+            {t.description}
+          </p>
+        </header>
+
+        {/* Component Showcase Section */}
+        <section id="bento-social-card" className="space-y-10 pb-20">
+          <div className="w-full">
+            <ComponentShowcase
+              title={t.showcase1}
+              githubUrl="https://github.com/MauricioTognoli/MauricioTognoli-Components"
+              DesktopComponent={<BentoSocialCardDesktop />}
+              MobileComponent={<BentoSocialCardMobile />}
+            />
+          </div>
+        </section>
+      </div>
+    </div>
+  );
+}
