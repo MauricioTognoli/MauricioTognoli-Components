@@ -4,8 +4,8 @@ import { useEffect } from "react";
 import { useThemeLang } from "@/context/ThemeLangContext";
 import { ComponentShowcase } from "@/components/component-showcase";
 import { socialBlocksData } from "@/data/socialBlocksData";
-import BentoSocialCardDesktop from "@/components/social-blocks/BentoSocialCard/BentoSocialCardDesktop";
-import BentoSocialCardMobile from "@/components/social-blocks/BentoSocialCard/BentoSocialCardMobile";
+import SocialGridDesktop from "@/components/social-blocks/SocialGrid/SocialGridDesktop";
+import SocialGridMobile from "@/components/social-blocks/SocialGrid/SocialGridMobile";
 
 export default function SocialBlocksPage() {
   const { language } = useThemeLang();
@@ -36,13 +36,13 @@ export default function SocialBlocksPage() {
         </header>
 
         {/* Component Showcase Section */}
-        <section id="bento-social-card" className="space-y-10 pb-20">
+        <section id="social-grid" className="space-y-10 pb-20">
           <div className="w-full">
             <ComponentShowcase
               title={t.showcase1}
               githubUrl="https://github.com/MauricioTognoli/MauricioTognoli-Components"
-              DesktopComponent={<BentoSocialCardDesktop />}
-              MobileComponent={<BentoSocialCardMobile />}
+              DesktopComponent={<SocialGridDesktop />}
+              MobileComponent={<SocialGridMobile />}
             />
           </div>
         </section>

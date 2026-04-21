@@ -7,12 +7,14 @@ export interface SocialBlocksData {
 export const socialBlocksData: Record<string, SocialBlocksData> = {
   es: {
     title: "Bloques Sociales",
-    description: "Componentes llamativos para mostrar perfiles y enlaces a redes sociales.",
-    showcase1: "Bento Social Card",
+    description:
+      "Componentes llamativos para mostrar perfiles y enlaces a redes sociales.",
+    showcase1: "Grilla Social",
   },
   en: {
     title: "Social Blocks",
-    description: "Eye-catching components to showcase social profiles and links.",
-    showcase1: "Bento Social Card",
+    description:
+      "Eye-catching components to showcase social profiles and links.",
+    showcase1: "Social Grid",
   },
 };
