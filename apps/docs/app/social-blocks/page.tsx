@@ -4,8 +4,23 @@ import { useEffect } from "react";
 import { useThemeLang } from "@/context/ThemeLangContext";
 import { ComponentShowcase } from "@/components/component-showcase";
 import { socialBlocksData } from "@/data/socialBlocksData";
-import SocialGridDesktop from "@/components/social-blocks/SocialGrid/SocialGridDesktop";
-import SocialGridMobile from "@/components/social-blocks/SocialGrid/SocialGridMobile";
+import { SocialGridDesktop, SocialGridMobile } from "@repo/ui";
+import type { ProfileData, SocialLinks } from "@repo/ui";
+
+const PROFILE: ProfileData = {
+  name: "Mauricio Tognoli",
+  role: "Frontend Developer",
+  bio: "Crafting modern web experiences with React, Next.js, and a touch of magic. Building intuitive interfaces for the future.",
+  avatarUrl: "https://avatars.githubusercontent.com/u/10433246?v=4",
+};
+
+const LINKS: SocialLinks = {
+  github: "https://github.com/MauricioTognoli",
+  linkedin: "https://www.linkedin.com/in/mauricio-tognoli",
+  twitter: "#",
+  instagram: "#",
+  email: "contact@example.com",
+};
 
 export default function SocialBlocksPage() {
   const { language } = useThemeLang();
@@ -40,9 +55,13 @@ export default function SocialBlocksPage() {
           <div className="w-full">
             <ComponentShowcase
               title={t.showcase1}
-              githubUrl="https://github.com/MauricioTognoli/MauricioTognoli-Components"
-              DesktopComponent={<SocialGridDesktop />}
-              MobileComponent={<SocialGridMobile />}
+              githubUrl="https://github.com/MauricioTognoli/MauricioTognoli-Components/tree/main/packages/ui/src/SocialBlocks/SocialGrid"
+              DesktopComponent={
+                <SocialGridDesktop profile={PROFILE} links={LINKS} />
+              }
+              MobileComponent={
+                <SocialGridMobile profile={PROFILE} links={LINKS} />
+              }
             />
           </div>
         </section>
